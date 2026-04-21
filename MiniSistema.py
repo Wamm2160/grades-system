@@ -1,21 +1,7 @@
-
-def add_numbers(numbers, number):
-    numbers.append(number)
-    return numbers
-        
-def total_sum(numbers):
-    return  sum(numbers)
-
-def max_number(numbers):
-    if not numbers:
-        return None
-    return max(numbers)
-
-def total_number_added(numbers):
-    return len(numbers)
+import services
 
 def menu():
-    print("Mini sistema basic")
+    print("Mini Sistema")
     print("1. Add a number")
     print("2. Show total")
     print("3. Show Higher number")
@@ -30,23 +16,23 @@ while True:
     
         if option == 1:
             number = float(input("Type the number: "))
-            numbers = add_numbers(numbers, number)
+            numbers = services.add_numbers(numbers, number)
             print("Number added successfully")
         
         elif option == 2:
             if not numbers:
                 print("No numbers added yet")
             else:
-                print("The total is:", total_sum(numbers))
+                print("The total is:", services.total_sum(numbers))
         
         elif option == 3:
             if not numbers:
                 print("No numbers added yet")
             else:
-                print("The higher number is:", max_number(number))
+                print("The higher number is:", services.max_number(numbers))
         
         elif option == 4:
-            print("The total numbers added:", total_number_added(numbers))
+            print("The total numbers added:", services.total_number_added(numbers))
             
         
         elif option == 5:
