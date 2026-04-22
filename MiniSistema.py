@@ -1,5 +1,6 @@
 import services
 
+
 def menu():
     print("Mini Sistema")
     print("1. Add a number")
@@ -16,7 +17,7 @@ while True:
     
         if option == 1:
             number = float(input("Type the number: "))
-            numbers = services.add_numbers(numbers, number)
+            numbers = services.add_item(numbers, number)
             print("Number added successfully")
         
         elif option == 2:
@@ -29,10 +30,10 @@ while True:
             if not numbers:
                 print("No numbers added yet")
             else:
-                print("The higher number is:", services.max_number(numbers))
+                print("The higher number is:", services.get_max(numbers))
         
         elif option == 4:
-            print("The total numbers added:", services.total_number_added(numbers))
+            print("The total numbers added:", services.count_items(numbers))
             
         
         elif option == 5:

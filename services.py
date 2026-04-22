@@ -1,14 +1,22 @@
-def add_numbers(numbers, number):
-    numbers.append(number)
-    return numbers
+def add_item(items, item):
+    items.append(item)
+    return items
         
-def total_sum(numbers):
-    return  sum(numbers)
+def total_sum(items):
+    return  sum(items)
 
-def max_number(numbers):
-    if not numbers:
+def get_average(items):
+    if len(items) == 0:
+        return 0
+    return sum(items) / len(items)
+
+def get_max(items):
+    if not items:
         return None
-    return max(numbers)
+    return max(items)
 
-def total_number_added(numbers):
-    return len(numbers)
+def count_items(items):
+    return len(items)
+
+def clear_all_items():
+    return []
