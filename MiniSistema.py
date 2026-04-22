@@ -1,4 +1,6 @@
 import services
+import storage
+numbers = storage.load_data("numbers.txt")
 
 
 def menu():
@@ -9,7 +11,7 @@ def menu():
     print("4. Count numbers")
     print("5. Exit")
     
-numbers = []
+#numbers = []
 while True: 
     menu()
     try:
@@ -18,6 +20,7 @@ while True:
         if option == 1:
             number = float(input("Type the number: "))
             numbers = services.add_item(numbers, number)
+            storage.save_data(numbers, "numbers.txt")
             print("Number added successfully")
         
         elif option == 2:

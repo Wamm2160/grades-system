@@ -1,4 +1,7 @@
 import services
+import storage
+grades = storage.load_data("grades.txt")
+
 def menu():
     print("\n--- Grade System ---")
     print("1. Add Grade")
@@ -10,7 +13,7 @@ def menu():
 
 
 
-grades = []
+#grades = []
 
 while True:
     menu()
@@ -20,6 +23,7 @@ while True:
         try:
             grade = float(input("Enter grade (0-10): "))
             grades = services.add_item(grades, grade) 
+            storage.save_data(grades, "grades.txt")
             print("Grade added successfully.")
         except ValueError:
             print("Invalid input. Try again.")
